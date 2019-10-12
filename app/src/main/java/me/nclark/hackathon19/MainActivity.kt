@@ -8,6 +8,8 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.preference.PreferenceManager
 import kotlinx.android.synthetic.main.activity_main.*
+import me.nclark.hackathon19.activity.ActivityFragment
+import me.nclark.hackathon19.home.HomeFragment
 import me.nclark.hackathon19.sharing.SharingFragment
 import me.nclark.hackathon19.signin.SigninActivity
 
@@ -32,8 +34,8 @@ class MainActivity : AppCompatActivity() {
 
         override fun getItem(position: Int): Fragment {
             return when(position) {
-                1 -> SharingFragment()
-                2 -> SharingFragment()
+                1 -> HomeFragment()
+                2 -> ActivityFragment()
                 else -> SharingFragment()
             }
         }

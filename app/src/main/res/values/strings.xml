@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">hackathon19</string>
+    <string name="school">School?</string>
+    <string name="title_activity_signin">Sign In</string>
 </resources>

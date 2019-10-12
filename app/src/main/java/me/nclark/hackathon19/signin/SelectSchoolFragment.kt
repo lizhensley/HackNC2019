@@ -43,10 +43,6 @@ class SelectSchoolFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId) {
             R.id.continue_item -> {
-                val prefs = PreferenceManager.getDefaultSharedPreferences(activity!!)
-                prefs.edit {
-                    putBoolean("signinCompleted", true)
-                }
                 startActivity(Intent(activity, MainActivity::class.java))
                 activity?.finish()
                 true

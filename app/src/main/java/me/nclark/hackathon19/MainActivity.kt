@@ -18,12 +18,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
-        if(!prefs.getBoolean("signinCompleted", false)) {
-            val intent = Intent(this, SigninActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
         view_pager.adapter = MainActivityPagerAdapter(supportFragmentManager)
         tab_layout.setupWithViewPager(view_pager)
         tab_layout.getTabAt(0)?.setIcon(R.drawable.ic_sharing)

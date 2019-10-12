@@ -26,6 +26,9 @@ class MainActivity : AppCompatActivity() {
         }
         view_pager.adapter = MainActivityPagerAdapter(supportFragmentManager)
         tab_layout.setupWithViewPager(view_pager)
+        tab_layout.getTabAt(0)?.setIcon(R.drawable.ic_sharing)
+        tab_layout.getTabAt(1)?.setIcon(R.drawable.ic_home)
+        tab_layout.getTabAt(2)?.setIcon(R.drawable.ic_graph)
     }
 
     class MainActivityPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {

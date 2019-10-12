@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         if(!prefs.getBoolean("signinCompleted", false)) {
             val intent = Intent(this, SigninActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 

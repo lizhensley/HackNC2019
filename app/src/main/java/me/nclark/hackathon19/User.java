@@ -1,6 +1,7 @@
 package me.nclark.hackathon19;
 
 import java.util.Date;
+import java.util.ArrayList;
 
 public class User {
 
@@ -17,6 +18,9 @@ public class User {
 
     // Stores swipes User has made
     private SwipeInstance[] swipeHistory;
+
+    private int[] numSwipesPerDay;
+    private Date[] days;
 
     public User(int ID, String username, String password, int totalSwipes, int currentSwipes, SwipeInstance[] swipeHistory) {
 
@@ -88,6 +92,41 @@ public class User {
             newArr[i] = swipeHistory[i];
         }
         return newArr;
+    }
+
+    public Date[] getDays() {
+        boolean isInArray = false;
+
+        for (int i = 0; i < swipeHistory.length; i++) {
+            for (int j = 0; j < days.length; j++) {
+                if(swipeHistory[i].getDate().equals(days[j])) {
+                    isInArray = true;
+                }
+            }
+
+            if (!isInArray) {
+                days[days.length] = swipeHistory[i].getDate();
+            }
+        }
+
+        return days;
+    }
+
+    public int[] getNumSwipesPerDay() {
+
+        Date[] dateArr = getDays();
+
+        numSwipesPerDay = new int[dateArr.length];
+
+        for (int i = 0; i < swipeHistory.length; i++) {
+            for (int j = 0; j < dateArr.length; j++) {
+                if(swipeHistory[i].getDate().equals(dateArr[j])) {
+                    numSwipesPerDay[j] += 1;
+                }
+            }
+        }
+
+        return numSwipesPerDay;
     }
 
 }

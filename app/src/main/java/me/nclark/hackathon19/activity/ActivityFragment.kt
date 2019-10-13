@@ -31,12 +31,13 @@ class ActivityFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val activity = activity as MainActivity
         val user = activity.user
-        val swipeHistory = user.getSwipeHistory()
+        val dates = user.getDays()
+        val swipesPerDay = user.getNumSwipesPerDay()
 
-        val data = arrayOfNulls<DataPoint>(swipeHistory.size)
+        val data = arrayOfNulls<DataPoint>(dates.size)
 
-        for (i in swipeHistory.indices) {
-            data[i] = DataPoint(swipeHistory[i].getDate(), 1.0)
+        for (i in dates.indices) {
+            data[i] = DataPoint(dates[i], swipesPerDay[i] * 1.0)
         }
 
         val series = LineGraphSeries<DataPoint>(data)

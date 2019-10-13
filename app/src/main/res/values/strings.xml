@@ -5,4 +5,6 @@
     <string name="continue_string">Continue</string>
     <string name="share_with_friend">Share with a Friend</string>
     <string name="swipe_bank">Donate to Swipe Bank</string>
+    <string name="donation_message">Donation Message</string>
+    <string name="share_swipes">Share Swipes</string>
 </resources>

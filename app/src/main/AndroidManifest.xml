@@ -14,6 +14,8 @@
         <activity
             android:name=".signin.SigninActivity"
             android:label="@string/title_activity_signin" />
+        <activity android:name=".sharing.ShareSwipesActivity"
+            android:label="@string/share_swipes" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />

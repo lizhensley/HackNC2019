@@ -14,9 +14,17 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="150dp"
-        tools:layout_editor_absoluteY="206dp" />
+        android:layout_width="137dp"
+        android:layout_height="51dp"
+        android:text="University "
+        tools:layout_editor_absoluteX="123dp"
+        tools:layout_editor_absoluteY="129dp" />
+
+    <Spinner
+        android:id="@+id/schoolSelectionSpinner"
+        android:layout_width="290dp"
+        android:layout_height="30dp"
+        tools:layout_editor_absoluteX="54dp"
+        tools:layout_editor_absoluteY="249dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

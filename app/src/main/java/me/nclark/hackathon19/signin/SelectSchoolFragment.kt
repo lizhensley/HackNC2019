@@ -3,6 +3,7 @@ package me.nclark.hackathon19.signin
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
@@ -11,9 +12,7 @@ import kotlinx.android.synthetic.main.fragment_school_selection.*
 import me.nclark.hackathon19.MainActivity
 import me.nclark.hackathon19.R
 
-class SelectSchoolFragment : Fragment() {
-
-    val schools = arrayOf("UNC")
+class SelectSchoolFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,10 +29,11 @@ class SelectSchoolFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = ArrayAdapter<String>(activity!!,
-            android.R.layout.simple_spinner_item, schools)
+        val adapter = ArrayAdapter.createFromResource(activity!!,
+            R.array.universities, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        school_spinner.adapter = adapter
+        schoolSelectionSpinner.setAdapter(adapter)
+        schoolSelectionSpinner.setOnItemSelectedListener(this);
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -49,5 +49,11 @@ class SelectSchoolFragment : Fragment() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    override fun onNothingSelected(parent: AdapterView<*>?) {
+    }
+
+    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
     }
 }

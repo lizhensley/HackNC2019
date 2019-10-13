@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">SwipeIt</string>
+    <array name="universities">
+        <item>UNC-Chapel Hill</item>
+        <item>NC State</item>
+    </array>
     <string name="school">School?</string>
     <string name="title_activity_signin">Sign In</string>
     <string name="continue_string">Continue</string>

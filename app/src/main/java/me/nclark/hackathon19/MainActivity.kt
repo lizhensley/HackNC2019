@@ -12,22 +12,13 @@ import me.nclark.hackathon19.activity.ActivityFragment
 import me.nclark.hackathon19.home.HomeFragment
 import me.nclark.hackathon19.sharing.SharingFragment
 import me.nclark.hackathon19.signin.SigninActivity
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-import java.text.SimpleDateFormat
-import java.util.*
-
-
 
 class MainActivity : AppCompatActivity() {
 
     /* creates User... for demo purposes, we'll eventually import the doc with the fake
         user data throw it in
      */
-
-    var format = SimpleDateFormat("yyyy-MM-dd")
-    val user = User()
+    val user = User();
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">hackathon19</string>
+    <string name="app_name">SwipeIt</string>
     <string name="school">School?</string>
     <string name="title_activity_signin">Sign In</string>
     <string name="continue_string">Continue</string>

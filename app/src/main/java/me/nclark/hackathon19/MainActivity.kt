@@ -22,8 +22,10 @@ import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import java.text.SimpleDateFormat
 
-
 class MainActivity : AppCompatActivity() {
+
+    lateinit var user: User
+
     /* creates User... for demo purposes, we'll eventually import the doc with the fake
         user data throw it in
      */
@@ -50,7 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         val array = arrayOfNulls<Date>(dates.size)
 
-        val user = User(PID, username, password, totalSwipes, swipesLeft, dates.toArray(array));
+        user = User(PID, username, password, totalSwipes, swipesLeft, dates.toArray(array));
     }
 
     class MainActivityPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {

@@ -40,7 +40,8 @@
         android:layout_below="@id/donation_message_box"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        tools:text="10"/>
+        android:text="5"
+        tools:ignore="HardcodedText" />
 
 
 </RelativeLayout>

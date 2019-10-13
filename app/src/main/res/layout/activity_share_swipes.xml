@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingStart="16dp"
+    android:paddingRight="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="8dp">
+
+    <EditText
+        android:id="@+id/donation_message_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:inputType="textShortMessage"
+        android:hint="@string/donation_message"
+        android:importantForAutofill="no">
+        <requestFocus />
+    </EditText>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/donation_message_box"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@id/swipes_feedback_text"
+        android:layout_toStartOf="@id/swipes_feedback_text"
+        android:max="10"
+        android:progress="5" />
+
+    <TextView
+        android:id="@+id/swipes_feedback_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/donation_message_box"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        tools:text="10"/>
+
+
+</RelativeLayout>

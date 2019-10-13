@@ -15,6 +15,11 @@ import me.nclark.hackathon19.signin.SigninActivity
 
 class MainActivity : AppCompatActivity() {
 
+    /* creates User... for demo purposes, we'll eventually import the doc with the fake
+        user data throw it in
+     */
+    val user = User();
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

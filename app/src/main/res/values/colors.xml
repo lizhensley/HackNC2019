@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorGradientStart">#33d1b5</color>
-    <color name="colorGradientCenter">#3f000f</color>
-    <color name="colorGradientEnd">#b2ffff</color>
+    <color name="colorGradientStart">#f8e4ed</color>
+    <color name="colorGradientCenter">#ffac9e</color>
+    <color name="colorGradientEnd">#f38b7f</color>
 </resources>

@@ -1,17 +1,16 @@
 package me.nclark.hackathon19
 
-import android.content.Intent
+import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import androidx.preference.PreferenceManager
 import kotlinx.android.synthetic.main.activity_main.*
 import me.nclark.hackathon19.activity.ActivityFragment
 import me.nclark.hackathon19.home.HomeFragment
 import me.nclark.hackathon19.sharing.SharingFragment
-import me.nclark.hackathon19.signin.SigninActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,6 +27,12 @@ class MainActivity : AppCompatActivity() {
         tab_layout.getTabAt(0)?.setIcon(R.drawable.ic_sharing)
         tab_layout.getTabAt(1)?.setIcon(R.drawable.ic_home)
         tab_layout.getTabAt(2)?.setIcon(R.drawable.ic_graph)
+
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+        val animDrawable = view_pager.background as AnimationDrawable
+        animDrawable.setEnterFadeDuration(10)
+        animDrawable.setExitFadeDuration(5000)
+        animDrawable.start()
     }
 
     class MainActivityPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {

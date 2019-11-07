@@ -1,7 +1,7 @@
 package me.nclark.hackathon19;
 
-import java.util.Date;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class User {
     // User's School ID
@@ -73,21 +73,16 @@ public class User {
     }
 
     public Date[] getDays() {
-        boolean isInArray = false;
+        ArrayList<Date> days = new ArrayList<>();
 
-        for (int i = 0; i < swipeHistory.length; i++) {
-            for (int j = 0; j < days.length; j++) {
-                if(swipeHistory[i].equals(days[j])) {
-                    isInArray = true;
-                }
-            }
-
-            if (!isInArray) {
-                days[days.length] = swipeHistory[i];
+        for(Date date : swipeHistory) {
+            if(!days.contains(date)) {
+                days.add(date);
             }
         }
 
-        return days;
+        Date[] daysArray = new Date[days.size()];
+        return days.toArray(daysArray);
     }
 
     public int[] getNumSwipesPerDay() {

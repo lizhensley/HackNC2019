@@ -1,26 +1,16 @@
 package me.nclark.hackathon19
-import android.content.Intent
+import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import androidx.preference.PreferenceManager
 import kotlinx.android.synthetic.main.activity_main.*
 import me.nclark.hackathon19.activity.ActivityFragment
 import me.nclark.hackathon19.home.HomeFragment
 import me.nclark.hackathon19.sharing.SharingFragment
-import me.nclark.hackathon19.signin.SigninActivity
-import java.util.*
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import java.text.SimpleDateFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,10 +27,16 @@ class MainActivity : AppCompatActivity() {
         tab_layout.getTabAt(0)?.setIcon(R.drawable.ic_sharing)
         tab_layout.getTabAt(1)?.setIcon(R.drawable.ic_home)
         tab_layout.getTabAt(2)?.setIcon(R.drawable.ic_graph)
+
+        val animDrawable = view_pager.background as AnimationDrawable
+        animDrawable.setEnterFadeDuration(10)
+        animDrawable.setExitFadeDuration(5000)
+        animDrawable.start()
+
         var format = SimpleDateFormat("yyyy-MM-dd")
-        var dates: ArrayList<Date> = ArrayList<Date>(100)
-        var data = File("app/src/main/assets/StudentData")
-        var sc = Scanner(data);
+        var dates = arrayListOf<Date>()
+        var data = assets.open("StudentData")
+        var sc = Scanner(data)
         var PID = sc.nextLine().toInt()
         var username = sc.nextLine()
         var password = sc.nextLine()
@@ -50,9 +46,7 @@ class MainActivity : AppCompatActivity() {
             dates.add(format.parse(sc.nextLine()))
         }
 
-        val array = arrayOfNulls<Date>(dates.size)
-
-        user = User(PID, username, password, totalSwipes, swipesLeft, dates.toArray(array));
+        user = User(PID, username, password, totalSwipes, swipesLeft, dates.toTypedArray())
     }
 
     class MainActivityPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {

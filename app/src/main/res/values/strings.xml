@@ -11,4 +11,5 @@
     <string name="swipe_bank">Donate to Swipe Bank</string>
     <string name="donation_message">Donation Message</string>
     <string name="share_swipes">Share Swipes</string>
+    <string name="donate">Donate</string>
 </resources>
